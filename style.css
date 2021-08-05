@@ -1,22 +1,23 @@
-body
-{
-  color: white;
-  background: #c0d3ff;
+body{
+   background-color: #FEC5BB;
 }
-span
-{
-  font-size: 30px;
+
+#header{
+    color: white;
 }
+
 #camera , #result
 {
   border: 2px dashed black;
   width: 350px;
   height: 300px; 
 }
+
 #result_emotion_name ,#result_emotion_name2  
 {
   color: black;
 }
+
 .emotion_name
 {
   font-size: 40px;
@@ -34,9 +35,8 @@ span
 
 label{
   font-size: 14px;
-  color: #62b33a;
+  color: white;
   padding: 6px;
   border-radius: 10px;
-  background-color: white;
-
+  background-color: brown;
 }
