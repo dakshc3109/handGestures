@@ -1,5 +1,7 @@
-var prediction1 = "smile";
-var prediction2 = "sad";
+//this is main.js
+
+var prediction1 = "";
+var prediction2 = "";
 
 Webcam.set({
     width: 350,
@@ -12,25 +14,24 @@ var camera = document.getElementById("camera");
 
 Webcam.attach("#camera");
 
-function take_sanpshot(){
+function take_snapshot(){
     Webcam.snap(function(data_uri){
-        document.getElementById("result").innerHTML = "<img id='captured_img' src='"+data_uri+"'>";
-    });
-};
+    document.getElementById("result").innerHTML = "<img id='captured_img' src='"+data_uri+"'>"
+});
+}
 
-console.log("ml5.version: ",ml5.version);
+console.log("ml5.version", ml5.version);
 
-var classifier = ml5.imageClassifier("https://storage.googleapis.com/tm-model/KGDZIXPUZ/model.json", modelLoaded);
+var classifier = ml5.imageClassifier("https://storage.googleapis.com/tm-model/BNPi1TWDy/model.json", modelLoaded);
 
 function modelLoaded(){
-    console.log("ml5 loaded");
-};
+    console.log("modelLoaded")
+}
 
-function check(){
+function speak(){
     var synth = window.speechSynthesis;
-    var speak_data_1 = "The first prediction is "+prediction1;
-    var speak_data_2 = " and second one is "+prediction2;
+    var speak_data_1 = "First prediction is "+prediction1;
+    var speak_data_2 = "and the second prediction is "+prediction2;
     var utterThis = new SpeechSynthesisUtterance(speak_data_1+speak_data_2);
     synth.speak(utterThis);
 }
-
